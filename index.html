@@ -1,11 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <title>Simple CSS Slot Machine</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #111;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.slot-wrapper {
+  background: #222;
+  padding: 40px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+.reels {
+  display: inline-flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.reel {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000;
+  border: 4px solid #555;
+  position: relative;
+}
+
+.reel .symbols {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: spin 3s steps(6) infinite paused;
+}
+
+/* Preview animation on hover */
+.slot-wrapper:hover .reel .symbols {
+  animation-play-state: running;
+}
+
+.symbol {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: #fff;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-600px); /* 6 symbols × 100px */
+  }
+}
+
+/* Spin button (non‑functional – requires JavaScript) */
+button {
+  padding: 12px 32px;
+  background: #e50914;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Helper text */
+.hint {
+  color: #aaa;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+  </style>
 </head>
 <body>
-    <h1>Cat888 1234555</h1>
+  <div class="slot-wrapper">
+    <div class="reels">
+      <div class="reel">
+        <div class="symbols">
+          <div class="symbol">🍒</div>
+          <div class="symbol">🍋</div>
+          <div class="symbol">🔔</div>
+          <div class="symbol">💎</div>
+          <div class="symbol">7️⃣</div>
+          <div class="symbol">🍀</div>
+        </div>
+      </div><div class="reel">
+    <div class="symbols">
+      <div class="symbol">🍒</div>
+      <div class="symbol">🍋</div>
+      <div class="symbol">🔔</div>
+      <div class="symbol">💎</div>
+      <div class="symbol">7️⃣</div>
+      <div class="symbol">🍀</div>
+    </div>
+  </div>
+
+  <div class="reel">
+    <div class="symbols">
+      <div class="symbol">🍒</div>
+      <div class="symbol">🍋</div>
+      <div class="symbol">🔔</div>
+      <div class="symbol">💎</div>
+      <div class="symbol">7️⃣</div>
+      <div class="symbol">🍀</div>
+    </div>
+  </div>
+</div>
+
+<!-- Non‑functional spin button placeholder -->
+<button>SPIN</button>
+<p class="hint">Hover over the machine to preview the spin animation</p>
+
+  </div>
 </body>
 </html>
+    
